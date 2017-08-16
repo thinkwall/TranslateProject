@@ -6,20 +6,22 @@
 
 
  ![Getting started with Perl on the Raspberry Pi](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/raspberry_pi_blue_board.jpg?itok=01NR5MX4 "Getting started with Perl on the Raspberry Pi")
->Image by :?opensource.com
+>Image by :opensource.com
 
-    前几天我在SVPerl上说用树莓派搭建了个Perl环境的话题，就有人冒出来问我，咦？那玩意儿不是只能用来折腾Python么？我对他说，恭喜你，答对了，余也是这么想地（我也是这么想的）。但其实树莓派是一个开放的平台，什么都可以做。树莓派的官方系统可以跑所有的编程语言，Perl、Python还有其它常见的语言都是原生支持的。
-    这其中原因取决于树莓派的创始团队的理念，不做任何限制。树莓派的创始人 Eben Upton 教授在解释“树莓派”的命名时说，这个产品命名为“派”， 一个原因是 Pi 听起来很像 Python，他也很喜欢这门语言，他很推荐把这门语言作为小孩子学习编程的入门语言，但是他和他和团队还是创造了通用型计算机而不只是一个开发板。同时树莓派相关的众多开源软件也对我们没有任何限制，只要你想到的，应有尽有。
+    前几天我在SVPerl上说用树莓派搭建了个Perl环境的话题，就有人冒出来问我，咦？那玩意儿不是只能用来折腾Python么？我对他说，恭喜你，答对了，余也是这么想地（我也是这么想的）。但其实树莓派是一个开放的平台，什么都可以做。树莓派的官方系统可以跑所有的编程语言，Perl、Python还有其它常见的语言更是原生支持。
+    这其中原因取决于树莓派的创始团队的理念，不做任何限制。树莓派的创始人 Eben Upton 教授在解释“树莓派”的命名时说，这个产品命名为“派”， 一个原因是 Pi 听起来很像 Python，他很喜欢这门语言，他推荐把这门语言作为小孩子学习编程的入门语言，但是这并不影响他和他和团队创造了一款通用型计算机而不只是一个开发板。树莓派支持的众多软件也都是开源的，对我们没有任何限制，只要你想到的，应有尽有。
 
 更多关于树莓派
 
 *   [树莓派最新情报][1]
 *   [什么是树莓派？][2]
 *   [树莓派入门指南][3]
-*   [共享你的树莓派杰作和教程][4]
+*   [共享你的树莓派hack杰作和制作教程][4]
 
-接下来我要介绍的是我用Perl写的镜像刻录脚本，我给他取名 PiFlash ，如果你没有Perl的基础，不需要看脚本，只要跟着步骤操作就能成功，
 The second point to my presentation at SVPerl and this article is to introduce my "PiFlash" script. It was written in Perl, but it doesn't require any knowledge of Perl to automate your task of flashing SD cards for a Raspberry Pi from a Linux system. It provides safety for beginners, so they won't accidentally erase a hard drive while trying to flash an SD card. It offers automation and convenience for power users, which includes me and is why I wrote it. Similar tools already existed for Windows and Macs, but the instructions on the Raspberry Pi website oddly have no automated tools for Linux users. Now one?exists.
+
+接下来我要介绍的是我用 Perl 写的镜像刻录软件，我给他取名 PiFlash ，如果你不懂Perl也没关系，不需要看脚本，只要跟着步骤操作就能成功。
+这个脚本的特点是不会丢失卡上原有的数据，而且操作简单，一键完成，就像windows平台的Win32DiskImager，傻瓜式的，点几下就把树莓派系统刻录到SD卡里了，这样的软件在 Mac 系统上也有，但是 Linux 系统上一直没有，不过现在有了，没错，就是这个。当然，这个软件对高级用户来说更是得心应手，比如我。哈哈，这也是我写他的原因。
 
 Open source software has a long tradition of new projects starting because an author wanted to "scratch their own itch," or to solve their own problems. That's the way Eric S. Raymond described it in his 1997 paper and 1999 book?"[The Cathedral and the Bazaar][8]," which defined the open source software development methodology. I wrote PiFlash to fill a need for Linux users like myself.
 
