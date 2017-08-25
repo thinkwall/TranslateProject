@@ -18,14 +18,13 @@
 *   [树莓派入门指南][3]
 *   [共享你的树莓派hack杰作和制作教程][4]
 
-The second point to my presentation at SVPerl and this article is to introduce my "PiFlash" script. It was written in Perl, but it doesn't require any knowledge of Perl to automate your task of flashing SD cards for a Raspberry Pi from a Linux system. It provides safety for beginners, so they won't accidentally erase a hard drive while trying to flash an SD card. It offers automation and convenience for power users, which includes me and is why I wrote it. Similar tools already existed for Windows and Macs, but the instructions on the Raspberry Pi website oddly have no automated tools for Linux users. Now one?exists.
+    接下来我要介绍的是我用 Perl 写的镜像刻录软件，我给他取名 PiFlash ，用户不懂Perl也没关系，不需要看脚本，只要能把脚本跑起来就能成功。
+这个脚本的特点之一是防止粗手指误输入“sudo rm -rf /”这样的命令 ，而且操作简单，一键完成。同类产品有windows平台的Win32DiskImager，傻瓜式的，点几下就把树莓派系统刻录到SD卡里了，这样的软件在 Mac 系统上也有，但是 Linux 系统上一直没有，不过现在有了，没错，就是这个。当然，这个软件对高级用户来说更是得心应手，比如我。哈哈，这也是我写他的原因。
 
-接下来我要介绍的是我用 Perl 写的镜像刻录软件，我给他取名 PiFlash ，如果你不懂Perl也没关系，不需要看脚本，只要跟着步骤操作就能成功。
-这个脚本的特点是不会丢失卡上原有的数据，而且操作简单，一键完成，就像windows平台的Win32DiskImager，傻瓜式的，点几下就把树莓派系统刻录到SD卡里了，这样的软件在 Mac 系统上也有，但是 Linux 系统上一直没有，不过现在有了，没错，就是这个。当然，这个软件对高级用户来说更是得心应手，比如我。哈哈，这也是我写他的原因。
+Open source software has a long tradition of new projects starting because an author wanted to "scratch their own itch," or to solve their own problems. That's the way Eric S. Raymond described it in his 1997 paper and 1999 book?"[大教堂与市集The Cathedral and the Bazaar][8]," which defined the open source software development methodology. I wrote PiFlash to fill a need for Linux users like myself.
+开源软件一直有一个陋习，就是在项目一开始的时候，作者只满足他自己的需求，这也是 Eric S. Raymond 在[大教堂与市集][8]这本书中所批判的，这本书也是 Eric 97年发表的的论文，定义了开源软件的方法论。因此我在写的这个软件的时候，就遵照了做有效开源的原则，一方面满足自己的需求，同时也考虑了其它人的需要。
 
-Open source software has a long tradition of new projects starting because an author wanted to "scratch their own itch," or to solve their own problems. That's the way Eric S. Raymond described it in his 1997 paper and 1999 book?"[The Cathedral and the Bazaar][8]," which defined the open source software development methodology. I wrote PiFlash to fill a need for Linux users like myself.
-
-### Downloadable system images
+### 下载官方镜像Downloadable system images
 
 When setting up a Raspberry Pi, you first need to download an operating system for it. We call it a "system image" file. Once you download it to your desktop, laptop, or even another Raspberry Pi, you have to write or "flash" it to an SD card. The details are covered online already. It can be a bit tricky to do manually because getting the system image on the whole SD card and?not on a partition matters. The system image will actually contain at least one partition of its own because the Raspberry Pi's boot procedure needs a FAT32 filesystem partition from which to start. Other partitions after the boot partition can be any filesystem type supported by the OS kernel.
 
@@ -127,7 +126,7 @@ With these tasks, I've made the case that you really can use Perl as well as any
 作者简介：
 
 Ian Kluft - Ian has had parallel interests since grade school in computing and flight. He was coding on Unix before there was Linux, and started on Linux 6 months after the kernel was posted. He has a masters degree in Computer Science and is a CSSLP (Certified Secure Software Lifecycle Professional). On the side he's a pilot and a certified flight instructor. As a licensed Ham Radio operator for over 25 years, experimentation with electronics has evolved in recent years to include the Raspberry Pi
-
+Ian Kluft - Ian 从小学开始就对计算机和飞机感兴趣，还没有Linux那会儿，他就在Unix上开始编程了。在Linux内核发布6个月的时候，他加入了Linux阵营。他有一个计算机科学的硕士学位，是一个 CSSLP （软件生命周期安全认证专家）。他还是一个飞机驾驶员，并取得了飞行教练员资格证。
 ------------------
 
 via: https://opensource.com/article/17/3/perl-raspberry-pi
